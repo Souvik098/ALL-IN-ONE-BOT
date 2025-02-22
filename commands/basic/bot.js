@@ -83,7 +83,7 @@ module.exports = {
                 ➡️ **${lang.followUsOn}:**
                 - ${lang.github} - ${githubLink}
                 - ${lang.replit} - ${replitLink}
-                - ${lang.youtube} - ${youtubeLink}
+                - ${lang.youtube}  ${youtubeLink}
             `)
             .setImage(lang.supportImageURL)
             .setTimestamp();
