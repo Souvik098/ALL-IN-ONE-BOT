@@ -42,7 +42,11 @@ module.exports = {
         .setDescription(lang.inviteDescription)
     )
     // Subcommand: support
-    
+    .addSubcommand(subcommand =>
+        subcommand
+            .setName('support')
+            .setDescription(lang.supportDescription)
+    ),
   async execute(interaction) {
     if (interaction.isCommand && interaction.isCommand()) {
     const subcommand = interaction.options.getSubcommand();
@@ -59,6 +63,33 @@ module.exports = {
       
       await interaction.reply({ embeds: [embed] });
     }
+    else if (subcommand === 'support') {
+        const supportServerLink = lang.supportServerLink;
+        const githubLink = lang.githubLink;
+        const replitLink = lang.replitLink;
+        const youtubeLink = lang.youtubeLink;
+
+        const embed = new EmbedBuilder()
+            .setColor('#b300ff')
+            .setAuthor({
+                name: lang.supportTitle,
+                iconURL: cmdIcons.rippleIcon,
+                url: supportServerLink
+            })
+            .setDescription(`
+                ➡️ **${lang.supportDescriptionTitle}:**
+                - ${lang.discord} - ${supportServerLink}
+                
+                ➡️ **${lang.followUsOn}:**
+                - ${lang.github} - ${githubLink}
+                - ${lang.replit} - ${replitLink}
+                - ${lang.youtube} - ${youtubeLink}
+            `)
+            .setImage(lang.supportImageURL)
+            .setTimestamp();
+
+        await interaction.reply({ embeds: [embed] });
+    }
     else if (subcommand === 'invite') {
       const clientId = interaction.client.user.id;
       const adminPermissions = 8; 
@@ -71,7 +102,7 @@ module.exports = {
         .setAuthor({ 
           name: lang.inviteTitle, 
           iconURL: cmdIcons.rippleIcon,
-          url: "https://discord.gg/xQF9f9yUEM" 
+          url: "https://discord.gg/JBY6zPuVvp" 
         })
         .setDescription(lang.inviteDescription.replace('{inviteURL}', inviteURL))
         .setTimestamp();
@@ -84,7 +115,7 @@ module.exports = {
         .setAuthor({ 
             name: "Alert!", 
             iconURL: cmdIcons.dotIcon,
-            url: "https://discord.gg/xQF9f9yUEM"
+            url: "https://discord.gg/JBY6zPuVvp"
         })
         .setDescription('- This command can only be used through slash command!\n- Please use `/bot`')
         .setTimestamp();
@@ -93,6 +124,7 @@ module.exports = {
 } 
   },
 };
+
 
 /*
 
