@@ -220,7 +220,7 @@ client.distube
                     color: 0xDC92FF,
                     author: {
                         name: 'Now playing',
-                        url: 'https://discord.gg/xQF9f9yUEM',
+                        url: 'https://discord.gg/JBY6zPuVvp',
                         icon_url: musicIcons.playerIcon
                     },
                     description: `- Song name: **${song.name}** \n- Duration: **${song.formattedDuration}**\n- Requested by: ${song.user}`,
@@ -254,7 +254,7 @@ client.distube
                     },
                     author: {
                         name: 'Song added sucessfully',
-                        url: 'https://discord.gg/xQF9f9yUEM',
+                        url: 'https://discord.gg/JBY6zPuVvp',
                         icon_url: musicIcons.correctIcon
                     },
                     timestamp: new Date().toISOString()
